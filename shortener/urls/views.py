@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,  get_object_or_404
 from .forms import UrlForm
 from .models import Url
 from django.contrib import messages
@@ -20,4 +20,12 @@ def index(req):
         form = UrlForm()
     
     return render(req, 'urls/index.html', {'form': form })
+
+
+
+def redirect_user(req, short_url):
+    url = get_object_or_404(Url, short_url=short_url)
+    long_url = url.long_url
+    print(long_url)
+    return redirect(long_url)
 
