@@ -6,4 +6,4 @@ class Url(models.Model):
     long_url = models.CharField(max_length=200)
     
     def __str__(self):
-        return self.name
+        return self.short_url
