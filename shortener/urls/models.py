@@ -1,18 +1,25 @@
 from django.db import models
+import string
 import random
 
 class Url(models.Model):
-    short_url = models.CharField(max_length=50, unique=True)
-    long_url = models.CharField(max_length=200, unique=True)
+    short_url = models.CharField(max_length=50)
+    long_url = models.CharField(max_length=200)
     
     def __str__(self):
-        return self.short_url
+        return self.long_url
 
-    # def save(self):
-    #     return super().save()
+    def save(self, *args, **kwargs):
+        self.short_url = self.shorten(self.long_url)
+        return super(Url, self).save(*args, **kwargs)
 
-    # @classmethod
-    # def shorten(long_url):
-    #     ''.join(random.choices(string.ascii_uppercase + string.digits, k=5))
-    #     return 
+
+# def save(self, *args, **kwargs):
+#     super(Profile, self).save(*args, **kwargs)
+
+
+    @staticmethod
+    def shorten(long_url):
+        return ''.join(random.choices(string.ascii_uppercase + string.digits, k=5))
+  
 
