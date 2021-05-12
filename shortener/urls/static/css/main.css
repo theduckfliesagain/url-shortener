@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
-
-
 :root {
     --primary-font: 'Titillium Web', sans-serif;
     --background-color: #140d2c;
@@ -9,7 +7,6 @@
     --message-color: #508BBF;
     --border-radius: 10px;
 }
-
 
 * {
     box-sizing: border-box;
@@ -40,17 +37,23 @@ main {
     box-shadow: 0 0 16px 16px rgba(0, 0, 0, 0.404);
 }
 
-main > form {
+@media only screen and (max-width: 768px) {
+    main {
+        width: 100%;
+    }
+}
+
+main>form {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
 }
 
-form > p > label{
+form>p>label {
     visibility: hidden;
 }
 
-form input{
+form input {
     margin: 0.5em 0;
     width: 100%;
     font-size: 1em;
@@ -70,27 +73,29 @@ form input[type=submit]:hover {
     transform: scale(0.8, 1);
     cursor: pointer;
     background-color: #c444eb;
-    color:white;
+    color: white;
 }
 
 .errorlist {
     list-style: none;
-    background-color: var(--error-color) ;
+    background-color: var(--error-color);
     padding: 20px;
     border-radius: var(--border-radius);
     font-size: 0.6em;
 }
-
 
 .messages {
     width: 70%;
     list-style: none;
-    background-color: var(--message-color) ;
+    background-color: var(--message-color);
     padding: 20px;
     border-radius: var(--border-radius);
     font-size: 0.6em;
 }
 
+.messages>li {
+    overflow-x: scroll;
+}
 
 i {
     pointer-events: none;
@@ -106,11 +111,27 @@ a {
 }
 
 a:hover {
-    
     transform: scale(1.2);
 }
 
 button {
     outline: none;
     border: none;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+    /* border-radius: 10px; */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--background-color);
+    border-radius: 20px;
 }
