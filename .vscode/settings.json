@@ -1,3 +1,12 @@
 {
-    "python.pythonPath": "c:\\Users\\rishi\\.pyenv\\pyenv-win\\versions\\3.9.5\\python.exe"
+    "python.pythonPath": "C:\\Users\\rishi\\.virtualenvs\\url-shortener-3BJfPiQV\\Scripts\\python.exe",
+
+    "files.associations": {
+        "**/*.html": "html",
+        "**/templates/**/*.html": "django-html",
+        "**/templates/**/*": "django-txt",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+    },
+
+    "emmet.includeLanguages": {"django-html": "html"},
 }
