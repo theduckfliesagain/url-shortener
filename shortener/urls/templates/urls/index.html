@@ -1,17 +1,25 @@
 {% extends 'urls/base.html' %}
 
 {% block content %}
-    <h1>Shorten a URL</h1>
-    
+    <h1>URLess</h1>
     <form action="" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Shortenise!">
+        <input type="submit" value="Shrink!">
     </form>
 {% if messages %}
     <ul class="messages">
         {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+        {{ message }}
+        <a href="{{message}}" target="_blank">
+            <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a class="copy-btn">
+            <i class="fas fa-copy"></i>
+        </a>
+        </li>
+       
         {% endfor %}
     </ul>
 {% endif %}
