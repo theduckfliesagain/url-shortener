@@ -8,9 +8,7 @@ def index(req):
     if(req.method == "POST"):
         form = UrlForm(req.POST)
         if form.is_valid():
-            print(form.cleaned_data["long_url"])
             url, created = Url.objects.get_or_create(long_url = form.cleaned_data["long_url"])
-            print(url.short_url, created)
             path = req.build_absolute_uri() 
             full_short_url = path + url.short_url
             messages.success(req, full_short_url)
@@ -26,6 +24,5 @@ def index(req):
 def redirect_user(req, short_url):
     url = get_object_or_404(Url, short_url=short_url)
     long_url = url.long_url
-    print(long_url)
     return redirect(long_url)
 
