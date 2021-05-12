@@ -1,0 +1,4 @@
+shortener/db.sqlite3
+.vscode/settings.json
+staticfiles
+__pycache__

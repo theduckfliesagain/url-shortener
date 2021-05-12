@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+:root {
+    --primary-font: 'Titillium Web', sans-serif;
+    --background-color: #140d2c;
+    --main-color: #3A378C;
+    --error-color: #e24e4e;
+    --message-color: #508BBF;
+    --border-radius: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    min-height: 100vh;
+    min-width: 100vw;
+}
+body {
+    background-color: var(--background-color);
+    /* display: flex;
+    justify-content: center; */
+}
+
+main {
+    margin: 20vh auto;
+    font-family: var(--primary-font);
+    width: 60%;
+    font-size: 2em;
+    display: flex;
+    flex-flow: column nowrap;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: var(--main-color);
+    color: white;
+    padding: 2vh;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 16px 16px rgba(0, 0, 0, 0.404);
+}
+
+
+main>form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+form>p>label {
+    visibility: hidden;
+}
+
+form input {
+    margin: 0.5em 0;
+    width: 100%;
+    font-size: 1em;
+    border-radius: var(--border-radius);
+    outline: none;
+    border: none;
+    padding: 0.5em;
+}
+
+form input[type=submit] {
+    transition: all 0.2s;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+form input[type=submit]:hover {
+    transform: scale(0.8, 1);
+    cursor: pointer;
+    background-color: #c444eb;
+    color: white;
+}
+
+.errorlist {
+    list-style: none;
+    background-color: var(--error-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    font-size: 0.6em;
+}
+
+.messages {
+    width: 70%;
+    list-style: none;
+    background-color: var(--message-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    font-size: 0.6em;
+}
+
+.messages>li {
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+i {
+    pointer-events: none;
+}
+
+a {
+    cursor: pointer;
+    transition: all 0.2s;
+    float: right;
+    margin: 0 0.5em;
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    transform: scale(1.2);
+}
+
+button {
+    outline: none;
+    border: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    main {
+        width: 100%;
+    }
+    .messages {
+        width: 100%;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--background-color);
+    border-radius: 20px;
+}
