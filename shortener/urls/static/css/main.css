@@ -40,14 +40,6 @@ main {
     box-shadow: 0 0 16px 16px rgba(0, 0, 0, 0.404);
 }
 
-@media only screen and (max-width: 768px) {
-    body {
-        flex-direction: column;
-    }
-    main {
-        width: 100%;
-    }
-}
 
 main>form {
     display: flex;
@@ -100,6 +92,7 @@ form input[type=submit]:hover {
 }
 
 .messages>li {
+    overflow-y: hidden;
     overflow-x: scroll;
 }
 
@@ -126,6 +119,17 @@ button {
 }
 
 
+@media only screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    main {
+        width: 100%;
+    }
+    .messages {
+        width: 100%;
+    }
+}
 
 ::-webkit-scrollbar {
     width: 5px;
