@@ -14,17 +14,20 @@
     padding: 0;
 }
 
+html, body {
+    min-height: 100vh;
+    min-width: 100vw;
+}
 body {
     background-color: var(--background-color);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
 }
 
 main {
-    margin: 20vh 0;
-    width: 60%;
+    margin: 20vh auto;
     font-family: var(--primary-font);
+    width: 60%;
     font-size: 2em;
     display: flex;
     flex-flow: column nowrap;
